@@ -1,6 +1,6 @@
 import React from "react";
 // import eldershipCover from "@/assets/images/eldership-cover.jpg";
-import pioneerAssociatePastor from "@/assets/images/eldership/mummy_chy.jpg";
+import pioneerAssociatePastor from "@/assets/images/eldership/mummy-chy.jpg";
 import generalPastor from "@/assets/images/eldership/gp.jpg";
 import assistantPastor from "@/assets/images/eldership/ap.jpg";
 
