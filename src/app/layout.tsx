@@ -1,16 +1,27 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
+import { DynaPuff, Outfit } from "next/font/google";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+import "./globals.css";
+import "@/custom-css/calendar.css";
+
+import { ThemeProvider as MUIThemeProvider } from "@mui/material/styles";
+import { NextUIProvider } from "@nextui-org/react";
+import { muiTheme } from "@/themes";
+import { Footer, Navbar } from "@/components";
+import { Toaster } from "sonner";
+
+const outfit = Outfit({
+  weight: "variable",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-outfit",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const modak = DynaPuff({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-modak",
 });
 
 export const metadata: Metadata = {
@@ -26,9 +37,25 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+        className={`${outfit.variable} ${modak.variable} ${outfit.className} antialiased`}>
+        <MUIThemeProvider theme={muiTheme}>
+          <NextUIProvider>
+            {/* <AnimatedCursorProvider /> */}
+            <Toaster />
+            {/* <div className="absolute inset-0 z-0">
+              <SparklesCore
+                background="transparent"
+                minSize={0.4}
+                maxSize={1}
+                particleDensity={50}
+                particleColor="#10B981"
+              />
+            </div> */}
+            <Navbar />
+            {children}
+            <Footer />
+          </NextUIProvider>
+        </MUIThemeProvider>
       </body>
     </html>
   );

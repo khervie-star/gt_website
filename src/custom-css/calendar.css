@@ -1,0 +1,79 @@
+.rbc-toolbar-label {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.rbc-btn-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* .rbc-btn-group button {
+  border: 1px solid transparent !important;
+ 
+  border-radius: 4px !important;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.rbc-btn-group .rbc-active button {
+  border: 1px solid transparent !important;
+  background: #4b5563 !important;
+  box-shadow: none;
+  border-radius: 4px !important;
+  font-size: 12px;
+  font-weight: 500;
+} */
+
+.rbc-btn-group button {
+  border: 1px solid transparent !important;
+  background: linear-gradient(
+    135deg,
+    #6b7280,
+    #9ca3af
+  ) !important; /* Gradient for a polished look */
+  color: white !important; /* White text for contrast */
+  border-radius: 6px !important; /* Slightly rounder corners */
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 12px; /* Better spacing for accessibility */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.rbc-btn-group button:hover {
+  background: linear-gradient(
+    135deg,
+    #4b5563,
+    #6b7280
+  ) !important; /* Darker gradient on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow for hover */
+}
+
+.rbc-btn-group .rbc-active {
+  background: linear-gradient(
+    135deg,
+    #000,
+    #121212
+  ) !important; /* Stronger gradient for active state */
+  border: 1px solid #374151 !important; /* Accent border */
+  color: white !important; /* Subtle light-gray text */
+  transform: translateY(0); /* No lift effect for active */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); /* Inset shadow for pressed effect */
+}
+
+.rbc-event.rbc-selected {
+  background-color: #5f147b !important;
+}
+
+@media screen and (max-width: 990px) {
+  .rbc-toolbar-label {
+    font-size: 24px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
