@@ -52,16 +52,17 @@ export const Navbar = () => {
   };
 
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Eldership", path: "/eldership" },
+    { name: "Missions", path: "#" },
+    { name: "Ministries", path: "#" },
+    { name: "Human teams", path: "#" },
+    { name: "Ministering teams", path: "#" },
+    { name: "Programmes", path: "#" },
+    { name: "Church Calendar", path: "#" },
+    { name: "Media", path: "#" },
+    { name: "Contact us", path: "#" },
   ];
 
   return (
@@ -72,13 +73,14 @@ export const Navbar = () => {
       className="bg-[#5f147b] from-[#5F147B] to-[#460E58]">
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle
+          className="!text-white"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         />
       </NavbarContent>
 
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
-          <div className="relative w-6 h-6 mr-2">
+          <div className="relative w-8 h-8 mr-2">
             <Image
               src={logo}
               alt="Glory Tabernacle Ministry"
@@ -86,7 +88,9 @@ export const Navbar = () => {
               fill
             />
           </div>
-          <p className="font-bold text-inherit">Glory Tabernacle Ministry</p>
+          <p className="font-bold text-white text-sm">
+            Glory <span className="text-[gold]">Tabernacle</span>
+          </p>
         </NavbarBrand>
       </NavbarContent>
 
@@ -100,7 +104,9 @@ export const Navbar = () => {
               fill
             />
           </div>
-          <p className="font-bold text-inherit">Glory Tabernacle Ministry</p>
+          <p className="font-bold text-white text-base">
+            Glory <span className="text-[gold]">Tabernacle</span>
+          </p>
         </NavbarBrand>
       </NavbarContent>
 
@@ -132,7 +138,7 @@ export const Navbar = () => {
         <NavbarItem>
           <Link
             color="foreground"
-            href="#"
+            href={siteUrls.eldership}
             className={`!text-[14px] ${
               pathname.startsWith("/eldership")
                 ? "!text-[gold] !font-bold"
@@ -248,8 +254,13 @@ export const Navbar = () => {
             Media
           </Link>
         </NavbarItem>
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Contact us</Link>
+        <NavbarItem>
+          <Link
+            color="foreground"
+            href="#"
+            className="!text-[14px] !text-gray-300">
+            Contact
+          </Link>
         </NavbarItem>
       </NavbarContent>
 
@@ -263,21 +274,18 @@ export const Navbar = () => {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarMenu>
+      <NavbarMenu className="bg-[#5f147b] from-[#5F147B] to-[#460E58]">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
-              className="w-full"
-              color={
-                index === 2
-                  ? "warning"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
-              href="#"
+              className={`!text-[14px] ${
+                pathname == item.path
+                  ? "!text-[gold] !font-bold"
+                  : "!text-gray-300"
+              }`}
+              href={item.path}
               size="lg">
-              {item}
+              {item.name}
             </Link>
           </NavbarMenuItem>
         ))}
