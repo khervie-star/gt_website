@@ -68,6 +68,11 @@
 
 .rbc-event.rbc-selected {
   background-color: #5f147b !important;
+  opacity: 1;
+}
+
+.rbc-event {
+  background-color: #5f147b !important;
 }
 
 @media screen and (max-width: 990px) {

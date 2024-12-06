@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import React, { useState } from "react";
 import ShineBorder from "@/components/ui/shine-border";
 import { toast } from "sonner";
 import zenith from "@/assets/images/zenith-logo.png";
 import Image from "next/image";
 import { TbCopyCheckFilled } from "react-icons/tb";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 const AccountDetailCard = ({
   bankName,
@@ -13,7 +12,13 @@ const AccountDetailCard = ({
   accountName,
   accountNumber,
   purpose,
-}: any) => {
+}: {
+  bankName: string;
+  bankLogo: string | StaticImport;
+  accountName: string;
+  accountNumber: string;
+  purpose: string;
+}) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -62,7 +67,7 @@ const AccountDetailCard = ({
   );
 };
 
-const AccountDetailsGrid = () => {
+export const AccountDetailsGrid = () => {
   const accountDetails = [
     {
       bankName: "Zenith Bank",
@@ -109,5 +114,3 @@ const AccountDetailsGrid = () => {
     </div>
   );
 };
-
-export default AccountDetailsGrid;

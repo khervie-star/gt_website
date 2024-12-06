@@ -178,7 +178,7 @@ const Eldership = () => {
             </div>
           </div>
 
-          <div className="my-10 lg:my-20">
+          <div className="my-10 lg:my-20 px-6">
             <p className="font-bold mb-2 text-[24px] lg:text-[32px]">
               Board <span className="text-yellow-500">of Trustees</span>
             </p>

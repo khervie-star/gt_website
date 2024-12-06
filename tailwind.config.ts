@@ -27,7 +27,7 @@ export default {
   				foreground: 'hsl(var(--popover-foreground))'
   			},
   			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
+  				DEFAULT: '#5f147b',
   				foreground: 'hsl(var(--primary-foreground))'
   			},
   			secondary: {
@@ -75,7 +75,8 @@ export default {
   			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
   			'shimmer-slide': 'shimmer-slide var(--speed) ease-in-out infinite alternate',
   			'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
-  			shine: 'shine var(--duration) infinite linear'
+  			shine: 'shine var(--duration) infinite linear',
+  			'background-position-spin': 'background-position-spin 3000ms infinite alternate'
   		},
   		keyframes: {
   			rainbow: {
@@ -143,6 +144,14 @@ export default {
   				},
   				to: {
   					'background-position': '0% 0%'
+  				}
+  			},
+  			'background-position-spin': {
+  				'0%': {
+  					backgroundPosition: 'top center'
+  				},
+  				'100%': {
+  					backgroundPosition: 'bottom center'
   				}
   			}
   		}

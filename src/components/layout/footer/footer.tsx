@@ -67,6 +67,7 @@ export const Footer = () => {
           <div>
             <p className="font-semibold mb-2">Ministries</p>
             <ul className="flex flex-col gap-1 text-gray-400 text-[12px]">
+              <Link href={"#"}>CLTS</Link>
               <Link href={"#"}>ADMI</Link>
               <Link href={"#"}>BSG</Link>
               <Link href={"#"}>Mission</Link>

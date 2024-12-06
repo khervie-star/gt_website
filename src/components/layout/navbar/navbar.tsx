@@ -9,7 +9,6 @@ import {
   NavbarMenu,
   NavbarContent,
   NavbarItem,
-  Link,
   Button,
   Dropdown,
   DropdownItem,
@@ -26,7 +25,8 @@ import {
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { usePathname, useRouter } from "next/navigation";
 import { siteUrls } from "@/config";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Church } from "lucide-react";
+import Link from "next/link";
 
 export const AcmeLogo = () => {
   return (
@@ -52,17 +52,17 @@ export const Navbar = () => {
   };
 
   const menuItems = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Eldership", path: "/eldership" },
+    { name: "Home", path: siteUrls.home },
+    { name: "About", path: siteUrls.about },
+    { name: "Eldership", path: siteUrls.eldership },
     { name: "Missions", path: "#" },
     { name: "Ministries", path: "#" },
-    { name: "Human teams", path: "#" },
-    { name: "Ministering teams", path: "#" },
+    { name: "Human teams", path: siteUrls.humanTeams },
+    { name: "Ministering teams", path: siteUrls.ministeringTeams },
     { name: "Programmes", path: "#" },
-    { name: "Church Calendar", path: "#" },
+    { name: "Church Calendar", path: siteUrls.churchCalendar },
     { name: "Media", path: "#" },
-    { name: "Contact us", path: "#" },
+    { name: "Contact us", path: siteUrls.contact },
   ];
 
   return (
@@ -79,7 +79,7 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="sm:hidden pr-3" justify="center">
-        <NavbarBrand>
+        <NavbarBrand as={Link} href={siteUrls.home}>
           <div className="relative w-8 h-8 mr-2">
             <Image
               src={logo}
@@ -95,7 +95,7 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="start">
-        <NavbarBrand>
+        <NavbarBrand as={Link} href={siteUrls.home}>
           <div className="relative w-9 h-9 mr-3">
             <Image
               src={logo}
@@ -148,18 +148,21 @@ export const Navbar = () => {
           </Link>
         </NavbarItem>
 
-        {/* <Dropdown>
+        <Dropdown>
           <NavbarItem>
             <DropdownTrigger>
-              <Link
-                as={Button}
+              <Button
                 disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent !text-gray-300 !text-[14px]"
+                className={`p-0 bg-transparent data-[hover=true]:bg-transparent ${
+                  pathname.startsWith("/teams")
+                    ? "!text-[gold] !font-bold"
+                    : "!text-gray-300"
+                } !text-[14px]`}
                 endContent={<ChevronDown />}
                 radius="sm"
                 variant="light">
                 Teams
-              </Link>
+              </Button>
             </DropdownTrigger>
           </NavbarItem>
           <DropdownMenu
@@ -169,37 +172,28 @@ export const Navbar = () => {
               base: "gap-4",
             }}>
             <DropdownItem
+              as={Link}
+              href={siteUrls.humanTeams}
               key="autoscaling"
               description="ACME scales apps to meet user demand, automagically, based on load."
-              startContent={icons.scale}>
+              startContent={<UsersIcon className="text-gray-500 w-5" />}>
               Human Teams
             </DropdownItem>
             <DropdownItem
+              as={Link}
+              href={siteUrls.ministeringTeams}
               key="usage_metrics"
               description="Real-time metrics to debug issues. Slow query added? We'll show you exactly where."
-              startContent={icons.activity}>
-              Ministry Teams
-            </DropdownItem>
-            <DropdownItem
-              key="production_ready"
-              description="ACME runs on ACME, join us and others serving requests at web scale."
-              startContent={icons.flash}>
-              Dorcas Mission
-            </DropdownItem>
-            <DropdownItem
-              key="99_uptime"
-              description="Applications stay on the grid with high availability and high uptime guarantees."
-              startContent={icons.server}>
-              ADMI
+              startContent={<Church className="text-gray-500 w-5" />}>
+              Ministering Teams
             </DropdownItem>
           </DropdownMenu>
-        </Dropdown> */}
+        </Dropdown>
 
         <Dropdown>
           <NavbarItem>
             <DropdownTrigger>
-              <Link
-                as={Button}
+              <Button
                 disableRipple
                 className={`p-0 bg-transparent data-[hover=true]:bg-transparent ${
                   pathname.startsWith("/programs")
@@ -210,7 +204,7 @@ export const Navbar = () => {
                 radius="sm"
                 variant="light">
                 Programs
-              </Link>
+              </Button>
             </DropdownTrigger>
           </NavbarItem>
           <DropdownMenu
@@ -251,14 +245,27 @@ export const Navbar = () => {
             color="foreground"
             href="#"
             className="!text-[14px] !text-gray-300">
+            Missions
+          </Link>
+        </NavbarItem>
+
+        <NavbarItem>
+          <Link
+            color="foreground"
+            href="#"
+            className="!text-[14px] !text-gray-300">
             Media
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link
             color="foreground"
-            href="#"
-            className="!text-[14px] !text-gray-300">
+            href={siteUrls.contact}
+            className={`!text-[14px] ${
+              pathname.startsWith("/contact")
+                ? "!text-[gold] !font-bold"
+                : "!text-gray-300"
+            }`}>
             Contact
           </Link>
         </NavbarItem>
@@ -283,8 +290,7 @@ export const Navbar = () => {
                   ? "!text-[gold] !font-bold"
                   : "!text-gray-300"
               }`}
-              href={item.path}
-              size="lg">
+              href={item.path}>
               {item.name}
             </Link>
           </NavbarMenuItem>
