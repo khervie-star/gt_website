@@ -290,7 +290,8 @@ export const Navbar = () => {
                   ? "!text-[gold] !font-bold"
                   : "!text-gray-300"
               }`}
-              href={item.path}>
+              href={item.path}
+              onClick={() => setIsMenuOpen(false)}>
               {item.name}
             </Link>
           </NavbarMenuItem>
