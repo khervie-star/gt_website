@@ -119,22 +119,24 @@ export default function Home() {
           <div
             className="mb-[20px] md:mb-0 relative w-full lg:w-[55%]"
             data-aos="zoom-in-up">
-            <div className="relative">
-              <HeroVideoDialog
-                className="dark:hidden block"
-                animationStyle="from-center"
-                videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-                thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
-                thumbnailAlt="Hero Video"
-              />
-              <HeroVideoDialog
-                className="hidden dark:block"
-                animationStyle="from-center"
-                videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-                thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
-                thumbnailAlt="Hero Video"
-              />
-            </div>
+            <BlurFade delay={0.25}>
+              <div className="relative">
+                <HeroVideoDialog
+                  className="dark:hidden block"
+                  animationStyle="from-center"
+                  videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+                  thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+                  thumbnailAlt="Hero Video"
+                />
+                <HeroVideoDialog
+                  className="hidden dark:block"
+                  animationStyle="from-center"
+                  videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+                  thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
+                  thumbnailAlt="Hero Video"
+                />
+              </div>
+            </BlurFade>
             {/* <div className="bg-[rgba(0,0,0,0.25)] absolute top-0 left-0 w-full h-full z-[200] rounded-md"></div> */}
           </div>
           <div className="welcome-text w-full lg:w-[45%]" data-aos="fade-left">
