@@ -9,7 +9,7 @@ export const Give = () => {
   return (
     <div>
       <div className="bg-white">
-        <div className="mx-auto max-w-full py-24">
+        <div className="mx-auto max-w-full py-8 lg:py-24">
           <div className="relative isolate overflow-hidden bg-gradient-to-bl from-[#5F147B] via-[#460E58] to-[#370B46] px-6 pt-16 shadow-2xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
             <svg
               viewBox="0 0 1024 1024"

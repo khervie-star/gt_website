@@ -24,9 +24,9 @@ export const LiveSection = () => {
                   <div className="circle3"></div>
                 </div>
               </div>
-              <h6 className="w-full md:w-3/4 font-josefin_sans !text-[20px] lg:!text-[40px]">
+              <h6 className="w-full md:w-3/4 font-josefin_sans !text-[40px]">
                 Stream{" "}
-                <span className="!text-yellow-500 !text-[20px] lg:!text-[40px]">
+                <span className="!text-yellow-500 !text-[40px]">
                   {" "}
                   Our Services
                 </span>{" "}

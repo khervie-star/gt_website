@@ -155,7 +155,7 @@ export default function Home() {
               </BoxReveal>
 
               <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-                <p className="text-[3em] font-bold">
+                <p className="text-[2.5rem] lg:text-[3em] font-bold">
                   Glory
                   <span className="text-[gold] mx-2">Tabernacle</span> Ministry
                 </p>
