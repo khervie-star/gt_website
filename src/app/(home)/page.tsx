@@ -1,84 +1,117 @@
 "use client";
 
 import {
+  Button,
   Card,
   CardBody,
   CardFooter,
   CardHeader,
   Divider,
 } from "@nextui-org/react";
-import {
-  ChurchIcon,
-  HandHelpingIcon,
-  BookOpenIcon,
-  CalendarIcon,
-  ChevronRight,
-  Link,
-  TextQuoteIcon,
-} from "lucide-react";
+import { ChevronRight, Link, TextQuoteIcon } from "lucide-react";
 import HeroVideoDialog from "@/components/ui/hero-video-dialog";
 import { BoxReveal } from "@/components/ui/box-reveal";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { cn } from "@/lib/utils";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
-import TextReveal from "@/components/ui/text-reveal";
-import { useTheme } from "next-themes";
-import { MagicCard } from "@/components/ui/magic-card";
 import MessageOfTheWeek from "./_components/pastors-desk";
 import { BentoDemo } from "./_components/bento";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { FaArrowRightLong } from "react-icons/fa6";
+import Image from "next/image";
+import upcoming from "@/assets/images/icons/upcoming.png";
+import church from "@/assets/images/icons/church.png";
+import motto from "@/assets/images/icons/motto.png";
+import BlurFade from "@/components/ui/blur-fade";
+import { Give, LiveSection, Services, TextScroll } from "./_components";
 
 export default function Home() {
-  const { theme } = useTheme();
-
   return (
     <section>
       <header
         className="relative h-[90vh] bg-cover bg-top"
         style={{ backgroundImage: 'url("/og.jpg")' }}>
-        <div className="absolute inset-0 bg-black/75 bg-opacity-60 flex items-center justify-center text-center">
+        <div className="absolute inset-0 bg-black/80 bg-opacity-60 flex items-center justify-center text-center">
           <div className="max-w-3xl px-4">
-            <h1 className="text-5xl font-bold text-white mb-6 drop-shadow-lg">
-              Glory Tabernacle Ministry
+            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+              Glory <span className="text-yellow-500">Tabernacle</span> Ministry
             </h1>
-            <p className="text-xl text-white mb-8 drop-shadow-md">
-              Building Faith, Serving Community, Transforming Lives
+            <p className="text-base lg:text-xl text-gray-300 mb-8 drop-shadow-md font-medium max-w-[500px] mx-auto">
+              That every member may be a living model of genuine salvatation,
+              sacntification and service
             </p>
             <div className="flex justify-center space-x-4">
-              <button className="bg-amber-500 text-white px-6 py-3 rounded-full hover:bg-amber-600 transition">
-                Join Us This Sunday
-              </button>
-              <button className="border-2 border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-blue-900 transition">
-                Learn More
-              </button>
+              <RainbowButton className="mt-6">
+                Learn more
+                <ChevronDownIcon className="w-5 h-5 ml-2" />
+              </RainbowButton>
             </div>
           </div>
         </div>
       </header>
 
       {/* Quick Links */}
-      <div className="container mx-auto px-4 py-16 grid md:grid-cols-4 gap-6">
+      <div className="container mx-auto px-4 py-16 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {[
           {
-            icon: ChurchIcon,
-            title: "Our Mission",
-            desc: "Connecting people to God",
+            icon: motto,
+            title: "Our Motto",
+            desc: "Jesus gave Himself for me, that He might redeem me from all iniquity and purify me unto Himself a peculiar child, zealous of good works",
+            others: [],
           },
           {
-            icon: HandHelpingIcon,
+            icon: church,
             title: "Worship",
-            desc: "Sundays 9:30 & 11 AM",
+            desc: "Experience God's presence and grow in faith through our uplifting worship services.",
+            others: ["Sundays: 9:00 - 11:30 AM", "Thurdays: 4:30 - 6:15 PM"],
           },
-          { icon: BookOpenIcon, title: "Small Groups", desc: "Grow together" },
-          { icon: CalendarIcon, title: "Events", desc: "Community activities" },
-        ].map((item, index) => (
-          <MagicCard
-            key={index}
-            className="cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl"
-            gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}>
-            <item.icon size={48} className="mx-auto mb-4 text-primary" />
-            <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-            <p className="text-gray-600 !text-[12px]">{item.desc}</p>
-          </MagicCard>
+          {
+            icon: upcoming,
+            title: "Upcoming Programmes",
+            desc: "Join us for exciting and impactful events designed to strengthen our community and faith.",
+            others: [],
+            link: "#",
+          },
+        ].map((item, idx: number) => (
+          <BlurFade delay={0.25 * idx} inView key={idx} className="!h-full">
+            <div
+              className="relative w-full bg-white rounded-[12px] shadow-[0px_7px_29px_0px_rgba(100,100,111,0.2)] p-[20px] h-full"
+              data-aos="fade-up">
+              <div className="flex flex-col justify-start items-center gap-1">
+                <div className="w-full mb-4">
+                  <Image
+                    src={item.icon}
+                    className="w-10 h-10 md:w-14 md:h-14"
+                    alt=""
+                  />
+                </div>
+                <div className="w-full">
+                  <h6 className="text-black font-montserrat font-semibold text-[20px] lg:text-[24px] mb-1">
+                    {item.title}
+                  </h6>
+                  <p className="text-gray-500 text-[14px] font-raleway font-light">
+                    {item.desc}
+                  </p>
+                  {item.others?.length > 0 && (
+                    <ul className="flex flex-col gap-2 list-inside list-disc mt-4">
+                      {item.others?.map((other, idx: number) => (
+                        <li
+                          className="text-primary text-[14px] font-raleway font-medium"
+                          key={idx}>
+                          {other}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {item.link && (
+                    <Button variant="flat" className="font-semibold !mt-6">
+                      Learn more <FaArrowRightLong />
+                    </Button>
+                  )}
+                </div>
+              </div>
+            </div>
+          </BlurFade>
         ))}
       </div>
       <section className="container mx-auto my-[50px] w-full md:w-[90%] p-[20px] md:p-[50px] bg-white flex justify-center">
@@ -145,6 +178,12 @@ export default function Home() {
         </div>
       </section>
 
+      <LiveSection />
+
+      <Services />
+
+      <Give />
+
       <section>
         <MessageOfTheWeek
           pastorName={"Kwesi Jones"}
@@ -159,17 +198,8 @@ export default function Home() {
         />
       </section>
 
-      <section>
-        {/* <VelocityScroll
-          text="Velocity Scroll"
-          default_velocity={5}
-          className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem]"
-        /> */}
+      <TextScroll />
 
-        <div className="z-10 flex items-center justify-center rounded-lg border bg-white dark:bg-black">
-          <TextReveal text="Have you won a soul for the Lord this year? Be wise; be a soul winner!" />
-        </div>
-      </section>
       <div className="flex flex-col lg:flex-row container mx-auto w-full">
         <section className="flex-1">
           <BentoDemo />

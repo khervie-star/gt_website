@@ -71,7 +71,7 @@ const GivePage = () => {
             color="primary"
             classNames={{
               tabList: "flex items-center justify-center mx-auto",
-              tabContent: "text-[20px] font-semibold",
+              tabContent: "font-semibold",
               tab: "!py-5 !px-8",
             }}>
             <Tab key="Local" title="Naira Account">

@@ -10,6 +10,7 @@ import {
   FaYoutube,
   FaFacebookF,
 } from "react-icons/fa6";
+import { siteUrls } from "@/config";
 
 export const Footer = () => {
   return (
@@ -90,16 +91,24 @@ export const Footer = () => {
         </p>
         <div className="flex gap-3 items-center">
           <IconButton>
-            <FaTwitter className="text-white w-4" />
+            <Link href={siteUrls.socialMedia.twitter} target="_blank">
+              <FaTwitter className="text-white w-4" />
+            </Link>
           </IconButton>
           <IconButton>
-            <FaInstagram className="text-white w-4" />
+            <Link href={siteUrls.socialMedia.instagram} target="_blank">
+              <FaInstagram className="text-white w-4" />
+            </Link>
           </IconButton>
           <IconButton>
-            <FaFacebookF className="text-white w-3" />
+            <Link href={siteUrls.socialMedia.facebook} target="_blank">
+              <FaFacebookF className="text-white w-3" />
+            </Link>
           </IconButton>
           <IconButton>
-            <FaYoutube className="text-white w-4" />
+            <Link href={siteUrls.socialMedia.youtube} target="_blank">
+              <FaYoutube className="text-white w-4" />
+            </Link>
           </IconButton>
         </div>
       </div>
