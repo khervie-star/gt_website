@@ -26,7 +26,7 @@ export const LiveSection = () => {
               </div>
               <h6 className="w-full md:w-3/4 font-josefin_sans !text-[40px]">
                 Stream{" "}
-                <span className="!text-yellow-500 !text-[40px]">
+                <span className="!text-red-500 lg:text-yellow-500 !text-[40px]">
                   {" "}
                   Our Services
                 </span>{" "}
