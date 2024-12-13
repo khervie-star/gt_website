@@ -158,7 +158,7 @@ export const Navbar = () => {
                     ? "!text-[gold] !font-bold"
                     : "!text-gray-300"
                 } !text-[14px]`}
-                endContent={<ChevronDown />}
+                endContent={<ChevronDown className="w-5 h-5" />}
                 radius="sm"
                 variant="light">
                 Teams
@@ -200,7 +200,7 @@ export const Navbar = () => {
                     ? "!text-[gold] !font-bold"
                     : "!text-gray-300"
                 } !text-[14px]`}
-                endContent={<ChevronDown />}
+                endContent={<ChevronDown className="w-5 h-5" />}
                 radius="sm"
                 variant="light">
                 Programs
