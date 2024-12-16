@@ -55,13 +55,13 @@ export const Navbar = () => {
     { name: "Home", path: siteUrls.home },
     { name: "About", path: siteUrls.about },
     { name: "Eldership", path: siteUrls.eldership },
-    { name: "Missions", path: "#" },
+    { name: "Missions", path: siteUrls.missions },
     { name: "Ministries", path: "#" },
     { name: "Human teams", path: siteUrls.humanTeams },
     { name: "Ministering teams", path: siteUrls.ministeringTeams },
     { name: "Programmes", path: "#" },
     { name: "Church Calendar", path: siteUrls.churchCalendar },
-    { name: "Media", path: "#" },
+    { name: "Blog", path: siteUrls.blog },
     { name: "Contact us", path: siteUrls.contact },
   ];
 
@@ -243,8 +243,12 @@ export const Navbar = () => {
         <NavbarItem>
           <Link
             color="foreground"
-            href="#"
-            className="!text-[14px] !text-gray-300">
+            href={siteUrls.missions}
+            className={`!text-[14px] ${
+              pathname.startsWith("/missions")
+                ? "!text-[gold] !font-bold"
+                : "!text-gray-300"
+            }`}>
             Missions
           </Link>
         </NavbarItem>
@@ -252,9 +256,13 @@ export const Navbar = () => {
         <NavbarItem>
           <Link
             color="foreground"
-            href="#"
-            className="!text-[14px] !text-gray-300">
-            Media
+            href={siteUrls.blog}
+            className={`!text-[14px] ${
+              pathname.startsWith("/blog")
+                ? "!text-[gold] !font-bold"
+                : "!text-gray-300"
+            }`}>
+            Blog
           </Link>
         </NavbarItem>
         <NavbarItem>

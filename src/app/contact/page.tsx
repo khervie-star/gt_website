@@ -1,8 +1,6 @@
 import React from "react";
 
-import BlurFade from "@/components/ui/blur-fade";
-import DotPattern from "@/components/ui/dot-pattern";
-import { Button, cn, Input, Textarea } from "@nextui-org/react";
+import { Button, Input, Textarea } from "@nextui-org/react";
 import Link from "next/link";
 import { siteUrls } from "@/config";
 import { LocateFixedIcon, Phone } from "lucide-react";
@@ -10,34 +8,22 @@ import { EnvelopeIcon } from "@heroicons/react/24/outline";
 
 import image from "@/assets/images/eldership-cover.jpg";
 import Image from "next/image";
+import { PageHeader } from "@/components";
 
 const Contact = () => {
   return (
     <>
       <div className="">
         <div className={"relative"}>
-          <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden bg-background px-6">
-            <BlurFade delay={0.25} inView>
-              <p className="z-10 whitespace-pre-wrap text-center text-5xl font-bold tracking-tighter text-black dark:text-white mb-4 max-w-[500px]">
+          <PageHeader
+            title={
+              <>
                 Reach <span className="text-yellow-500 mx-1">Us</span>{" "}
-              </p>
-            </BlurFade>
+              </>
+            }
+            description="We're here to connect, serve, and answer any questions you might have. Whether you're exploring faith, need assistance, or want to learn more about our church, we'd love to hear from you!"
+          />
 
-            <BlurFade delay={0.5} inView>
-              <p className="text-sm text-gray-500 mx-auto max-w-[500px] text-center">
-                We&apos;re here to connect, serve, and answer any questions you
-                might have. Whether you&apos;re exploring faith, need
-                assistance, or want to learn more about our church, we&apos;d
-                love to hear from you!
-              </p>
-            </BlurFade>
-
-            <DotPattern
-              className={cn(
-                "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
-              )}
-            />
-          </div>
           <div className={"w-full bg-[#f9f9f9]"}>
             <div className="container mx-auto  px-[20px] md:px-[100px] ">
               <div className="px-[20px] md:px-[40px]">

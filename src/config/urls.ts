@@ -2,6 +2,9 @@ export const siteUrls = {
   home: "/",
   about: "/about",
   eldership: "/eldership",
+  pioneers: "/the-pioneers",
+  missions: "/missions",
+  blog: "/blog",
   contact: "/contact",
 
   //Teams
