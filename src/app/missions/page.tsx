@@ -20,7 +20,7 @@ const Missions = () => {
         description="We're here to connect, serve, and answer any questions you might have. Whether you're exploring faith, need assistance, or want to learn more about our church, we'd love to hear from you!"
       />
 
-      <div className="w-full lg:w-[90%] mx-auto py-10 lg:py-20">
+      <div className="w-full lg:w-[90%] mx-auto py-10 lg:py-20 px-5">
         <p className="text-3xl font-bold text-black dark:text-white md:text-4xl mb-6">
           The Beginning Of
           <span className="text-yellow-500"> Mission Support </span>
@@ -46,7 +46,7 @@ const Missions = () => {
 
       <section
         id="missionSupport"
-        className="w-full lg:w-[90%] mx-auto py-10 lg:py-20">
+        className="w-full lg:w-[90%] mx-auto py-10 lg:py-20 px-5">
         <p className="text-3xl font-bold text-black dark:text-white md:text-4xl mb-6 lg:mb-10 text-center">
           Mission Support <span className="text-yellow-500">Areas</span>
         </p>
@@ -220,7 +220,9 @@ const Missions = () => {
         </div>
       </section>
 
-      <section id="photos" className="w-full lg:w-[90%] mx-auto py-10 lg:py-20">
+      <section
+        id="photos"
+        className="w-full lg:w-[90%] mx-auto py-10 lg:py-20 px-5">
         <p className="text-3xl font-bold text-black dark:text-white md:text-4xl mb-6">
           Mission <span className="text-yellow-500">Media</span>
         </p>
