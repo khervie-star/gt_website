@@ -61,8 +61,11 @@ const Missions = () => {
               tabContent: "font-semibold",
               tab: "!py-5 !px-8",
             }}>
-            <Tab key="1" title="Partial Missionary Sponsorship Program">
-              <Card className="p-5 mt-8">
+            <Tab key="1" title="PMSP">
+              <Card className="p-5 mt-0 lg:mt-8 !shadow-none">
+                <p className="text-gray-700 font-semibold">
+                  Partial Missionary Sponsorship Program
+                </p>
                 <div className="mt-4">
                   <p className="text-gray-600 mb-4">
                     From 1990 to 1994 the tithe of tithes was shared among some
@@ -99,8 +102,11 @@ const Missions = () => {
                 </div>
               </Card>
             </Tab>
-            <Tab key="2" title="Special Missionary Sponsorship Program">
-              <Card className="p-5 mt-8">
+            <Tab key="2" title="SMSP">
+              <Card className="p-5 mt-0 lg:mt-8 !shadow-none">
+                <p className="text-gray-700 font-semibold">
+                  Special Missionary Sponsorship Program
+                </p>
                 <div className="mt-4">
                   <p className="text-gray-600 mb-4">
                     In July 1997, Dr. U. Obed attended the Global Consultation
@@ -156,8 +162,9 @@ const Missions = () => {
                 </div>
               </Card>
             </Tab>
-            <Tab key="3" title="Mission Teams">
-              <Card className="p-5 mt-8">
+            <Tab key="3" title="Teams">
+              <Card className="p-5 mt-0 lg:mt-8 !shadow-none">
+                <p className="text-gray-700 font-semibold">Mission Teams</p>
                 <div className="mt-4">
                   <p className="text-gray-600 mb-4">
                     Members of the church who feel that they have missionary
