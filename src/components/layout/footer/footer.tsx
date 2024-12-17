@@ -86,8 +86,7 @@ export const Footer = () => {
       </div>
       <div className="container mx-auto pt-10 flex items-center justify-between">
         <p className="text-[12px] font-light">
-          © Copyright 2024 Celebration Church International. All Rights
-          Reserved.
+          © Copyright 2024 Glory Tabernacle Ministry. All Rights Reserved.
         </p>
         <div className="flex gap-3 items-center">
           <IconButton>
