@@ -257,6 +257,18 @@ export const Navbar = () => {
         <NavbarItem>
           <Link
             color="foreground"
+            href={siteUrls.sermons}
+            className={`!text-[14px] ${
+              pathname.startsWith("/sermons")
+                ? "!text-[gold] !font-bold"
+                : "!text-gray-300"
+            }`}>
+            Sermons
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link
+            color="foreground"
             href={siteUrls.contact}
             className={`!text-[14px] ${
               pathname.startsWith("/contact")

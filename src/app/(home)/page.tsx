@@ -2,20 +2,13 @@
 
 import {
   Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Divider,
 } from "@nextui-org/react";
-import { ChevronRight, Link, TextQuoteIcon } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import HeroVideoDialog from "@/components/ui/hero-video-dialog";
 import { BoxReveal } from "@/components/ui/box-reveal";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { cn } from "@/lib/utils";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
-import MessageOfTheWeek from "./_components/pastors-desk";
-import { BentoDemo } from "./_components/bento";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Image from "next/image";
@@ -24,8 +17,31 @@ import church from "@/assets/images/icons/church.png";
 import motto from "@/assets/images/icons/motto.png";
 import BlurFade from "@/components/ui/blur-fade";
 import { Give, LiveSection, Services, TextScroll } from "./_components";
+import generalPastor from "@/assets/images/eldership/GENERAL PASTOR.jpg"
+
 
 export default function Home() {
+
+    const scripture = {
+      verse:
+        "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.",
+      reference: "Jeremiah 29:11",
+      backgroundImage: "/images/scripture-for-the-week.jpg",
+    };
+
+
+      const message = {
+        title: "Glory to God",
+        paragraphs: [
+          "Beloved, as we step into this week, let us be reminded of God's enduring love and grace. Trust in His plans, and let faith guide your steps. May His peace and blessings fill your heart today and always.",
+          "The Lord calls us to be a light in the world. Let us strive to show compassion, extend kindness, and live with purpose, reflecting His glory in all we do. Together, we can make a difference, one act of love at a time.",
+          "As you face the days ahead, remember that you are never alone. God's presence is with you, strengthening and guiding you. Take comfort in His promises and rejoice in the hope He provides.",
+        ],
+        pastorName: "Prof. G. E. Akinbola",
+        role: "General Pastor",
+        image: generalPastor,
+      };
+
   return (
     <section>
       <header
@@ -186,69 +202,72 @@ export default function Home() {
 
       <Give />
 
-      <section>
-        <MessageOfTheWeek
-          pastorName={"Kwesi Jones"}
-          pastorImage={undefined}
-          shortDescription={
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-          }
-          fullMessage={
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-          }
-          title={"The Great Emancipation"}
-        />
+      <section
+        className="relative w-full h-[500px] flex items-center justify-center overflow-hidden rounded-lg shadow-lg"
+        style={{
+          backgroundImage: `url(${scripture.backgroundImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "bottom",
+        }}>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-65"></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center text-white p-6 md:p-10">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+            Scripture <span className="text-yellow-500">for the Week</span>
+          </h2>
+          <blockquote className="italic text-lg md:text-2xl font-light mb-6 max-w-4xl mx-auto">
+            &lsquo;{scripture.verse}&rsquo;
+          </blockquote>
+          <p className="text-lg md:text-xl font-medium">
+            {scripture.reference}
+          </p>
+        </div>
+      </section>
+
+      <section className="py-16 px-6 md:px-12 lg:px-24 bg-gray-100">
+        <div className="max-w-6xl mx-auto bgwhite rounded-lg p-8 flex flex-col md:flex-row items-center">
+          <div className="w-32 h-32 md:w-60 md:h-60 rounded-full overflow-hidden shadow-lg mb-6 md:mb-0 md:mr-8 relative flex-shrink-0">
+            <Image
+              src={message.image}
+              alt="General Pastor"
+              className="object-cover object-top"
+              fill
+            />
+          </div>
+
+          <div className="text-center md:text-left">
+            <AnimatedGradientText className="text-gray-600 mb-4">
+              From the pastor&apos;s desk
+            </AnimatedGradientText>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+              {message.title}
+            </h2>
+            {message.paragraphs.map((paragraph, index) => (
+              <p
+                key={index}
+                className="text-gray-600 text-sm md:text-base mb-4 leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+            <div className="mt-6">
+              <p className="text-gray-800 font-semibold text-lg">
+                {message.pastorName}
+              </p>
+              <p className="text-gray-600">{message.role}</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <TextScroll />
 
-      <div className="flex flex-col lg:flex-row container mx-auto w-full">
-        <section className="flex-1">
-          <BentoDemo />
-        </section>
-        <section className="flex-1">
-          <Card
-            className="max-w-md mx-auto bg-gradient-to-br from-blue-50 to-white shadow-lg"
-            radius="lg">
-            <CardHeader className="flex gap-3 bg-blue-100 p-4">
-              <TextQuoteIcon className="text-blue-600 text-2xl" />
-              <div className="flex flex-col">
-                <p className="text-xl font-bold text-blue-800">
-                  Scripture of the Week
-                </p>
-              </div>
-            </CardHeader>
-
-            <Divider />
-
-            <CardBody className="p-6">
-              <blockquote className="italic text-lg text-gray-800 border-l-4 border-blue-500 pl-4 mb-3">
-                &quot;Matthew 5: 6-8&quot;
-              </blockquote>
-
-              <p className="text-blue-600 font-semibold">— NKJV</p>
-
-              <div className="mt-4 bg-blue-50 p-3 rounded-lg">
-                <h3 className="font-bold text-gray-700 mb-2">Reflection:</h3>
-                <p className="text-gray-600">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Dignissimos ducimus numquam omnis corporis sed, aut fugit et!
-                  Enim minus, aut quaerat sed a quidem id, mollitia modi debitis
-                  nihil deserunt.
-                </p>
-              </div>
-            </CardBody>
-
-            <Divider />
-
-            <CardFooter className="flex justify-between items-center p-4 text-sm text-gray-500">
-              <Link href="#" className="text-blue-600">
-                Daily Inspiration
-              </Link>
-              <span>{new Date().toLocaleDateString()}</span>
-            </CardFooter>
-          </Card>
-        </section>
+      <div className="container mx-auto w-full py-10 lg:py-20">
+        <p className="text-2xl md:text-3xl font-semibold mb-6">
+          Quick <span className="text-yellow-500">Links</span>
+        </p>
+        {/* <BentoDemo /> */}
       </div>
     </section>
   );

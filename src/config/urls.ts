@@ -5,6 +5,7 @@ export const siteUrls = {
   pioneers: "/the-pioneers",
   missions: "/missions",
   blog: "/blog",
+  sermons: "/sermons",
   contact: "/contact",
 
   //Teams

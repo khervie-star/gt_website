@@ -88,7 +88,7 @@ const features = [
   },
   {
     Icon: CalendarIcon,
-    name: "Calendar",
+    name: "Church calendar",
     description: "Use the calendar to filter your files by date.",
     className: "col-span-3 lg:col-span-1",
     href: "#",
@@ -96,7 +96,7 @@ const features = [
     background: (
       <Calendar
         mode="single"
-        selected={new Date(2022, 4, 11, 0, 0, 0)}
+        selected={new Date()}
         className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
       />
     ),
