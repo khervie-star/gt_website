@@ -1,6 +1,5 @@
 import { PageHeader } from '@/components'
 import { BorderBeam } from '@/components/ui/border-beam';
-import { NeonGradientCard } from '@/components/ui/neon-gradient-card';
 import { Card, Divider } from '@nextui-org/react';
 import React from 'react'
 

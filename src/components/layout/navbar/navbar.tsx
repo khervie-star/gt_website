@@ -27,7 +27,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { siteUrls } from "@/config";
 import { ChevronDown, Church } from "lucide-react";
 import Link from "next/link";
-import upcoming from '@/assets/images/icons/upcoming.png';
 
 export const Navbar = () => {
   const router = useRouter();
