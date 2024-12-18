@@ -27,6 +27,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { siteUrls } from "@/config";
 import { ChevronDown, Church } from "lucide-react";
 import Link from "next/link";
+import upcoming from '@/assets/images/icons/upcoming.png';
 
 export const Navbar = () => {
   const router = useRouter();
@@ -211,6 +212,8 @@ export const Navbar = () => {
 
             <DropdownItem
               key="upcoming_events"
+              as={Link}
+              href={siteUrls.upcomingEvents}
               description="Stay updated with the latest upcoming church events, programs, and special gatherings."
               startContent={<UsersIcon className="h-5 w-5 text-green-500" />}>
               Upcoming Events

@@ -15,7 +15,7 @@ export const siteUrls = {
   // Programs
   churchCalendar: "/programs/church-calendar",
   weeklyServices: "/programs/weekly-services",
-
+  upcomingEvents: "/programs/upcoming",
   // Give
   give: "/give",
 
