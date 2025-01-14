@@ -2,8 +2,11 @@
 
 import { PageHeader } from "@/components";
 import BlurFade from "@/components/ui/blur-fade";
+import {  } from "@mui/material";
 import { Card, Tab, Tabs } from "@nextui-org/react";
 import React from "react";
+import { CreditCard, Gift, Banknote } from "lucide-react";
+
 
 const Missions = () => {
   const images = Array.from({ length: 9 }, (_, i) => {
@@ -243,6 +246,62 @@ const Missions = () => {
               />
             </BlurFade>
           ))}
+        </div>
+      </section>
+
+      {/* <section
+   
+        className="w-full lg:w-[90%] mx-auto py-10 lg:py-20 px-5">
+        <p className="text-3xl font-bold text-black dark:text-white md:text-4xl mb-6">
+          Give <span className="text-yellow-500">To Missions</span>
+        </p>
+
+      </section> */}
+
+      <section className="w-full lg:w-[90%] mx-auto py-10 lg:py-20 px-5">
+        <p className="text-3xl font-bold text-black dark:text-white md:text-4xl mb-6">
+          Give To <span className="text-yellow-500">Missions</span>
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+          <Card className="p-6 hover:shadow-lg transition-shadow">
+            <div className="p-0">
+              <div className="flex flex-col items-center text-center">
+                <CreditCard className="w-12 h-12 mb-4 text-yellow-500" />
+                <h3 className="text-xl font-semibold mb-3">Cash Transfer</h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Support our mission through direct cash transfers to our
+                  secure account
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-6 hover:shadow-lg transition-shadow">
+            <div className="p-0">
+              <div className="flex flex-col items-center text-center">
+                <Gift className="w-12 h-12 mb-4 text-yellow-500" />
+                <h3 className="text-xl font-semibold mb-3">Gifts in Kind</h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Donate physical items, supplies, or resources that support our
+                  mission work
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-6 hover:shadow-lg transition-shadow">
+            <div className="p-0">
+              <div className="flex flex-col items-center text-center">
+                <Banknote className="w-12 h-12 mb-4 text-yellow-500" />
+                <h3 className="text-xl font-semibold mb-3">Bank Transfer</h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Make a direct bank transfer to our mission account for
+                  immediate support
+                </p>
+              </div>
+            </div>
+          </Card>
         </div>
       </section>
     </div>

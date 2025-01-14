@@ -6,9 +6,9 @@ import { FaMapLocationDot } from "react-icons/fa6";
 import sundayService from "@/assets/images/SUNDAY SERVICE.jpg";
 import thursdayService from "@/assets/images/THURSDAY SERVICE.jpg";
 import hourOfDivineHelp from "@/assets/images/Hour Of Divine Help.jpg";
-import miracleService from "@/assets/images/Miracle and Communion Service.jpg";
-import bibleStudy from "@/assets/images/GPdesk.png";
-import prayerMeeting from "@/assets/images/Miracle and Communion Service.jpg";
+import miracleService from "@/assets/images/Miracle Service Thumbnails_20241201_101833_0000.png";
+import bibleStudy from "@/assets/images/Bible study.png";
+import prayerMeeting from "@/assets/images/Prayer-meeting.png";
 
 const WeeklyServices = () => {
   const services = [

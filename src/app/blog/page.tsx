@@ -1,3 +1,4 @@
+import { PageHeader } from "@/components";
 import DotPattern from "@/components/ui/dot-pattern";
 import Marquee from "@/components/ui/marquee";
 import { cn } from "@/lib/utils";
@@ -36,21 +37,17 @@ const Blog = () => {
         Welcome to Glory Tabernacle MinistryBlog - Contact us to share your
         story.
       </Marquee>
-      <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden bg-background">
-        <p className="z-10 whitespace-pre-wrap text-center text-5xl font-bold tracking-tighter text-black dark:text-white mb-4 max-w-[500px]">
-          Blog
-        </p>
-        <p className="text-sm text-gray-500 mx-auto max-w-[500px] text-center">
-          Sharing inspiration, faith, and community stories
-        </p>
-        <DotPattern
-          className={cn(
-            "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
-          )}
-        />
-      </div>
 
-      <div className="container mx-auto px-6 py-10 md:py-20">
+      <PageHeader
+        title={
+          <>
+            Coming <span className="text-yellow-500">Soon.</span>
+          </>
+        }
+        description=" Sharing inspiration, faith, and community stories"
+      />
+
+      {/* <div className="container mx-auto px-6 py-10 md:py-20">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">
           Featured <span className="text-yellow-500">Posts</span>
         </h2>
@@ -174,7 +171,7 @@ const Blog = () => {
             </Card>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
