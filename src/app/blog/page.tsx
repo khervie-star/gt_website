@@ -1,8 +1,5 @@
 import { PageHeader } from "@/components";
-import DotPattern from "@/components/ui/dot-pattern";
 import Marquee from "@/components/ui/marquee";
-import { cn } from "@/lib/utils";
-import { Card, CardHeader, CardFooter, Image, Button } from "@nextui-org/react";
 import React from "react";
 
 const Blog = () => {
