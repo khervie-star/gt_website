@@ -3,30 +3,30 @@ import Marquee from "@/components/ui/marquee";
 import React from "react";
 
 const Blog = () => {
-  const blogPosts = [
-    {
-      title: "Finding Hope in Difficult Times",
-      excerpt:
-        "A powerful message about maintaining faith during life's challenges.",
-      author: "Pastor John",
-      date: "June 15, 2024",
-      category: "Interview",
-    },
-    {
-      title: "Community Outreach Recap",
-      excerpt: "Highlights from our recent community service weekend.",
-      author: "Sarah Thompson",
-      date: "June 10, 2024",
-      category: "Outreach",
-    },
-    {
-      title: "Youth Ministry Summer Program",
-      excerpt: "Exciting details about our upcoming summer activities.",
-      author: "Mark Rodriguez",
-      date: "June 5, 2024",
-      category: "Youth",
-    },
-  ];
+  // const blogPosts = [
+  //   {
+  //     title: "Finding Hope in Difficult Times",
+  //     excerpt:
+  //       "A powerful message about maintaining faith during life's challenges.",
+  //     author: "Pastor John",
+  //     date: "June 15, 2024",
+  //     category: "Interview",
+  //   },
+  //   {
+  //     title: "Community Outreach Recap",
+  //     excerpt: "Highlights from our recent community service weekend.",
+  //     author: "Sarah Thompson",
+  //     date: "June 10, 2024",
+  //     category: "Outreach",
+  //   },
+  //   {
+  //     title: "Youth Ministry Summer Program",
+  //     excerpt: "Exciting details about our upcoming summer activities.",
+  //     author: "Mark Rodriguez",
+  //     date: "June 5, 2024",
+  //     category: "Youth",
+  //   },
+  // ];
 
   return (
     <div>
