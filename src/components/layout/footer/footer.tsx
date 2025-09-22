@@ -1,16 +1,12 @@
-import { Button, Input } from "@nextui-org/react";
-import React from "react";
-import logo from "@/assets/images/gt_logo.png";
-import Image from "next/image";
-import Link from "next/link";
-import { IconButton } from "@mui/material";
-import {
-  FaTwitter,
-  FaInstagram,
-  FaYoutube,
-  FaFacebookF,
-} from "react-icons/fa6";
-import { siteUrls } from "@/config";
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa6';
+
+import logo from '@/assets/images/gt_logo.png';
+import { siteUrls } from '@/config';
+import { IconButton } from '@mui/material';
+import { Button, Input } from '@nextui-org/react';
 
 export const Footer = () => {
   return (
@@ -48,11 +44,11 @@ export const Footer = () => {
           <div>
             <p className="font-semibold mb-2">Quick links</p>
             <ul className="flex flex-col gap-1 text-gray-400 text-[12px]">
-              <Link href={"#"}>Home</Link>
-              <Link href={"#"}>About us</Link>
-              <Link href={"#"}>Elership</Link>
-              <Link href={"#"}>Give</Link>
-              <Link href={"#"}>Contact us</Link>
+              <Link href={siteUrls.home}>Home</Link>
+              <Link href={siteUrls.about}>About us</Link>
+              <Link href={siteUrls.eldership}>Eldership</Link>
+              <Link href={siteUrls.give}>Give</Link>
+              <Link href={siteUrls.contact}>Contact us</Link>
             </ul>
           </div>
           <div>

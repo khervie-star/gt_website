@@ -1,24 +1,23 @@
 "use client";
 
-import {
-  Button,
-} from "@nextui-org/react";
-import { ChevronRight } from "lucide-react";
-import HeroVideoDialog from "@/components/ui/hero-video-dialog";
-import { BoxReveal } from "@/components/ui/box-reveal";
-import { RainbowButton } from "@/components/ui/rainbow-button";
-import { cn } from "@/lib/utils";
-import AnimatedGradientText from "@/components/ui/animated-gradient-text";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { FaArrowRightLong } from "react-icons/fa6";
-import Image from "next/image";
-import upcoming from "@/assets/images/icons/upcoming.png";
-import church from "@/assets/images/icons/church.png";
-import motto from "@/assets/images/icons/motto.png";
-import BlurFade from "@/components/ui/blur-fade";
-import { Give, LiveSection, Services, TextScroll } from "./_components";
-import generalPastor from "@/assets/images/eldership/GENERAL PASTOR.jpg"
+import { ChevronRight } from 'lucide-react';
+import Image from 'next/image';
+import { FaArrowRightLong } from 'react-icons/fa6';
 
+import generalPastor from '@/assets/images/eldership/GENERAL PASTOR.jpg';
+import church from '@/assets/images/icons/church.png';
+import motto from '@/assets/images/icons/motto.png';
+import upcoming from '@/assets/images/icons/upcoming.png';
+import AnimatedGradientText from '@/components/ui/animated-gradient-text';
+import BlurFade from '@/components/ui/blur-fade';
+import { BoxReveal } from '@/components/ui/box-reveal';
+import HeroVideoDialog from '@/components/ui/hero-video-dialog';
+import { RainbowButton } from '@/components/ui/rainbow-button';
+import { cn } from '@/lib/utils';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { Button } from '@nextui-org/react';
+
+import { Give, LiveSection, Services, TextScroll } from './_components';
 
 export default function Home() {
 
@@ -133,7 +132,7 @@ export default function Home() {
       <section className="container mx-auto my-[50px] w-full md:w-[90%] p-[20px] md:p-[50px] bg-white flex justify-center">
         <div className="w-full flex flex-col md:flex-row items-center justify-center md:gap-[50px]">
           <div
-            className="mb-[20px] md:mb-0 relative w-full lg:w-[55%]"
+            className="mb-[20px] md:mb-0 w-full lg:w-[55%]"
             data-aos="zoom-in-up">
             <BlurFade delay={0.25}>
               <div className="relative">

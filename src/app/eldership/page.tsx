@@ -1,28 +1,29 @@
-import React from "react";
+import Image from 'next/image';
+import React from 'react';
+
+import elderAdedapo from '@/assets/images/eldership/10_Adedapo.jpg';
+import assistantPastor from '@/assets/images/eldership/ap.jpg';
+import elderBamgbose from '@/assets/images/eldership/bamgbose.webp';
+import pioneerPastorAndMummyChy from '@/assets/images/eldership/combined.jpg';
+import mummyChy from '@/assets/images/eldership/dr_chy.jpg';
+import pioneerPastor from '@/assets/images/eldership/dr_obed.jpg';
+import elderAdewunmi from '@/assets/images/eldership/elder_adewumni.jpg';
+import elderAgbokeye from '@/assets/images/eldership/elder_agbokeye.jpg';
+import elderAlao from '@/assets/images/eldership/elder_alao.jpg';
+import elderOshafi from '@/assets/images/eldership/elder_oshafi.jpg';
+import elderUponi from '@/assets/images/eldership/elder_uponi.jpg';
+import generalPastor from '@/assets/images/eldership/gp.jpg';
+import elderHans from '@/assets/images/eldership/hans_adudappah.jpg';
 // import eldershipCover from "@/assets/images/eldership-cover.jpg";
-import pioneerAssociatePastor from "@/assets/images/eldership/mummy-chy.jpg";
-import generalPastor from "@/assets/images/eldership/gp.jpg";
-import assistantPastor from "@/assets/images/eldership/ap.jpg";
-
-import elderUponi from "@/assets/images/eldership/elder_uponi.jpg";
-import elderAdewunmi from "@/assets/images/eldership/elder_adewumni.jpg";
-import elderAgbokeye from "@/assets/images/eldership/elder_agbokeye.jpg";
-import elderOshafi from "@/assets/images/eldership/elder_oshafi.jpg";
-import elderAlao from "@/assets/images/eldership/elder_alao.jpg";
-
-import pioneerPastor from "@/assets/images/eldership/dr_obed.jpg";
-import mummyChy from "@/assets/images/eldership/dr_chy.jpg";
-import pioneerPastorAndMummyChy from "@/assets/images/eldership/combined.jpg";
-
-import Image from "next/image";
-import DotPattern from "@/components/ui/dot-pattern";
-import { cn } from "@/lib/utils";
-import { RainbowButton } from "@/components/ui/rainbow-button";
-import BlurFade from "@/components/ui/blur-fade";
-import { ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
-import { CardContent } from "@mui/material";
-import { Card, CardHeader } from "@nextui-org/react";
-import { MagicCard } from "@/components/ui/magic-card";
+import pioneerAssociatePastor from '@/assets/images/eldership/mummy-chy.jpg';
+import BlurFade from '@/components/ui/blur-fade';
+import DotPattern from '@/components/ui/dot-pattern';
+import { MagicCard } from '@/components/ui/magic-card';
+import { RainbowButton } from '@/components/ui/rainbow-button';
+import { cn } from '@/lib/utils';
+import { ChevronDoubleRightIcon } from '@heroicons/react/24/outline';
+import { CardContent } from '@mui/material';
+import { Card, CardHeader } from '@nextui-org/react';
 
 const pastors = [
   {
@@ -79,6 +80,12 @@ const eldersList = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, repudiandae eveniet sint alias tempore eligendi quian autem voluptatem ut facilis? Excepturi deleniti quisquam dignissimos, aperiam debitis dolores amet ullam molestias!",
   },
+  {
+    name: "G. Adebayo",
+    image: null,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, repudiandae eveniet sint alias tempore eligendi quian autem voluptatem ut facilis? Excepturi deleniti quisquam dignissimos, aperiam debitis dolores amet ullam molestias!",
+  },
 ];
 
 const pastElders = [
@@ -86,7 +93,7 @@ const pastElders = [
     name: "Rev. Prof. Hans Adu-dapah",
     deceased: false,
     bndYears: "",
-    image: null,
+    image: elderHans,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, repudiandae eveniet sint alias tempore eligendi quian autem voluptatem ut facilis? Excepturi deleniti quisquam dignissimos, aperiam debitis dolores amet ullam molestias!",
   },
@@ -102,7 +109,7 @@ const pastElders = [
     name: "Late Justice O. J. Bamgbose",
     deceased: true,
     bndYears: "(1960 - 2023)",
-    image: null,
+    image: elderBamgbose,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, repudiandae eveniet sint alias tempore eligendi quian autem voluptatem ut facilis? Excepturi deleniti quisquam dignissimos, aperiam debitis dolores amet ullam molestias!",
   },
@@ -127,7 +134,7 @@ const pastElders = [
     name: "Prof. A. A. Adedapo",
     deceased: false,
     bndYears: "",
-    image: null,
+    image: elderAdedapo,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, repudiandae eveniet sint alias tempore eligendi quian autem voluptatem ut facilis? Excepturi deleniti quisquam dignissimos, aperiam debitis dolores amet ullam molestias!",
   },
@@ -245,9 +252,10 @@ const Eldership = () => {
                   <div className="w-full lg:w-[40%]  order-1 lg:order-2">
                     <BlurFade delay={0.1} inView>
                       <Image
-                        src={elder.image}
+                        src={elder?.image || ""}
                         alt=""
                         className="rounded-2xl h-[400px] object-cover object-top"
+                        placeholder='blur'
                       />
                     </BlurFade>
                   </div>
@@ -341,10 +349,11 @@ const Eldership = () => {
                   <CardContent>
                     {elder.image ? (
                       <div className="mb-4">
-                        <img
-                          src={elder.image}
+                        <Image
+                          src={elder?.image || ""}
                           alt={elder.name}
                           className="w-full h-48 object-cover rounded-md"
+                          placeholder='blur'
                         />
                       </div>
                     ) : (
