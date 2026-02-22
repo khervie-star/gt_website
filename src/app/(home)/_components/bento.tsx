@@ -1,9 +1,5 @@
-import {
-  CalendarIcon,
-  HeartFilledIcon,
-  VideoIcon,
-} from "@radix-ui/react-icons";
-import { HandHeart, Users2, MapPin, ArrowRight } from "lucide-react";
+import { CalendarIcon, VideoIcon } from "@radix-ui/react-icons";
+import { HandHeart, Users2, MapPin } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Calendar } from "@/components/ui/calendar";
