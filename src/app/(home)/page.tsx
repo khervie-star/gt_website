@@ -1,52 +1,62 @@
 "use client";
 
-import { ChevronRight } from 'lucide-react';
-import Image from 'next/image';
-import { FaArrowRightLong } from 'react-icons/fa6';
+import { ChevronRight, Quote } from "lucide-react";
+import Image from "next/image";
+import { FaArrowRightLong } from "react-icons/fa6";
 
-import generalPastor from '@/assets/images/eldership/GENERAL PASTOR.jpg';
-import church from '@/assets/images/icons/church.png';
-import motto from '@/assets/images/icons/motto.png';
-import upcoming from '@/assets/images/icons/upcoming.png';
-import AnimatedGradientText from '@/components/ui/animated-gradient-text';
-import BlurFade from '@/components/ui/blur-fade';
-import { BoxReveal } from '@/components/ui/box-reveal';
-import HeroVideoDialog from '@/components/ui/hero-video-dialog';
-import { RainbowButton } from '@/components/ui/rainbow-button';
-import { cn } from '@/lib/utils';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
-import { Button } from '@nextui-org/react';
+import generalPastor from "@/assets/images/eldership/GENERAL PASTOR.jpg";
+import church from "@/assets/images/icons/church.png";
+import motto from "@/assets/images/icons/motto.png";
+import upcoming from "@/assets/images/icons/upcoming.png";
+import AnimatedGradientText from "@/components/ui/animated-gradient-text";
+import BlurFade from "@/components/ui/blur-fade";
+import { BoxReveal } from "@/components/ui/box-reveal";
+import HeroVideoDialog from "@/components/ui/hero-video-dialog";
+import { RainbowButton } from "@/components/ui/rainbow-button";
+import { cn } from "@/lib/utils";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { Button } from "@nextui-org/react";
 
-import { Give, LiveSection, Services, TextScroll } from './_components';
+import {
+  BentoDemo,
+  Give,
+  LiveSection,
+  Services,
+  TextScroll,
+} from "./_components";
 
 export default function Home() {
+  const scripture = {
+    verse:
+      "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.",
+    reference: "Jeremiah 29:11",
+    backgroundImage: "/images/scripture-for-the-week.jpg",
+  };
 
-    const scripture = {
-      verse:
-        "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.",
-      reference: "Jeremiah 29:11",
-      backgroundImage: "/images/scripture-for-the-week.jpg",
-    };
-
-
-      const message = {
-        title: "Glory to God",
-        paragraphs: [
-          "Beloved, as we step into this week, let us be reminded of God's enduring love and grace. Trust in His plans, and let faith guide your steps. May His peace and blessings fill your heart today and always.",
-          "The Lord calls us to be a light in the world. Let us strive to show compassion, extend kindness, and live with purpose, reflecting His glory in all we do. Together, we can make a difference, one act of love at a time.",
-          "As you face the days ahead, remember that you are never alone. God's presence is with you, strengthening and guiding you. Take comfort in His promises and rejoice in the hope He provides.",
-        ],
-        pastorName: "Prof. G. E. Akinbola",
-        role: "General Pastor",
-        image: generalPastor,
-      };
+  const message = {
+    title: "Glory to God",
+    paragraphs: [
+      "Beloved, as we step into this week, let us be reminded of God's enduring love and grace. Trust in His plans, and let faith guide your steps. May His peace and blessings fill your heart today and always.",
+      "The Lord calls us to be a light in the world. Let us strive to show compassion, extend kindness, and live with purpose, reflecting His glory in all we do. Together, we can make a difference, one act of love at a time.",
+      "As you face the days ahead, remember that you are never alone. God's presence is with you, strengthening and guiding you. Take comfort in His promises and rejoice in the hope He provides.",
+    ],
+    pastorName: "Prof. G. E. Akinbola",
+    role: "General Pastor",
+    image: generalPastor,
+  };
 
   return (
     <section>
-      <header
-        className="relative h-[90vh] bg-cover bg-top"
-        style={{ backgroundImage: 'url("/og.jpg")' }}>
-        <div className="absolute inset-0 bg-black/80 bg-opacity-60 flex items-center justify-center text-center">
+      <header className="relative h-screen w-full overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover">
+          <source src="/videos/hero.mov" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/80 bg-opacity-80 flex items-center justify-center text-center z-10">
           <div className="max-w-3xl px-4">
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
               Glory <span className="text-yellow-500">Tabernacle</span> Ministry
@@ -161,7 +171,7 @@ export default function Home() {
                   🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
                   <span
                     className={cn(
-                      `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+                      `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
                     )}>
                     Welcome to
                   </span>
@@ -201,62 +211,132 @@ export default function Home() {
 
       <Give />
 
-      <section
-        className="relative w-full h-[500px] flex items-center justify-center overflow-hidden rounded-lg shadow-lg"
-        style={{
-          backgroundImage: `url(${scripture.backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "bottom",
-        }}>
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-65"></div>
+      <section className="py-10 px-6 md:px-12 lg:px-24 bg-white relative">
+        <div className="max-w-7xl mx-auto">
+          <BlurFade delay={0.2} inView>
+            <div className="relative w-full rounded-[2.5rem] overflow-hidden shadow2xl group min-h-[500px] flex items-center justify-center">
+              <div
+                className="absolute inset-0 w-full h-full transition-transform duration-1000 group-hover:scale-105"
+                style={{
+                  backgroundImage: `url(${scripture.backgroundImage})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
 
-        {/* Content */}
-        <div className="relative z-10 text-center text-white p-6 md:p-10">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            Scripture <span className="text-yellow-500">for the Week</span>
-          </h2>
-          <blockquote className="italic text-lg md:text-2xl font-light mb-6 max-w-4xl mx-auto">
-            &lsquo;{scripture.verse}&rsquo;
-          </blockquote>
-          <p className="text-lg md:text-xl font-medium">
-            {scripture.reference}
-          </p>
+              {/* Rich gradient overlays for depth and contrast */}
+              <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-[#5046e6]/10 mix-blend-overlay" />
+
+              {/* Decorative inner framing */}
+              <div className="absolute inset-6 md:inset-10 border border-white/20 rounded-[1.5rem] pointer-events-none z-10 transition-all duration-700 group-hover:border-white/40" />
+
+              <div className="relative z-20 flex flex-col items-center justify-center p-8 md:p-16 text-center">
+                <AnimatedGradientText className="mb-8 text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-white/90 bg-white/10 px-6 py-2 rounded-full backdrop-blur-md border border-white/20">
+                  Scripture for the Week
+                </AnimatedGradientText>
+
+                <div className="relative max-w-4xl mx-auto px-6 md:px-12">
+                  <Quote className="absolute -top-6 -left-2 md:-top-10 md:-left-8 w-12 h-12 md:w-20 md:h-20 text-yellow-500/30 rotate-180" />
+
+                  <blockquote className="text-2xl md:text-4xl lg:text-5xl font-serif text-white leading-normal md:leading-snug mb-8 font-medium drop-shadow-lg relative z-10">
+                    &ldquo;{scripture.verse}&rdquo;
+                  </blockquote>
+
+                  <Quote className="absolute -bottom-6 -right-2 md:-bottom-10 md:-right-8 w-12 h-12 md:w-20 md:h-20 text-yellow-500/30" />
+                </div>
+
+                <div className="flex items-center gap-4 mt-2">
+                  <div className="h-px w-10 bg-yellow-500" />
+                  <p className="text-lg md:text-xl font-bold text-yellow-400 tracking-wide uppercase">
+                    {scripture.reference}
+                  </p>
+                  <div className="h-px w-10 bg-yellow-500" />
+                </div>
+              </div>
+            </div>
+          </BlurFade>
         </div>
       </section>
 
-      <section className="py-16 px-6 md:px-12 lg:px-24 bg-gray-100">
-        <div className="max-w-6xl mx-auto bgwhite rounded-lg p-8 flex flex-col md:flex-row items-center">
-          <div className="w-32 h-32 md:w-60 md:h-60 rounded-full overflow-hidden shadow-lg mb-6 md:mb-0 md:mr-8 relative flex-shrink-0">
-            <Image
-              src={message.image}
-              alt="General Pastor"
-              className="object-cover object-top"
-              fill
-            />
-          </div>
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none opacity-40">
+          <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-indigo-50 blur-3xl" />
+          <div className="absolute -bottom-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-yellow-50 blur-3xl" />
+        </div>
 
-          <div className="text-center md:text-left">
-            <AnimatedGradientText className="text-gray-600 mb-4">
-              From the pastor&apos;s desk
-            </AnimatedGradientText>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-              {message.title}
-            </h2>
-            {message.paragraphs.map((paragraph, index) => (
-              <p
-                key={index}
-                className="text-gray-600 text-sm md:text-base mb-4 leading-relaxed">
-                {paragraph}
-              </p>
-            ))}
-            <div className="mt-6">
-              <p className="text-gray-800 font-semibold text-lg">
-                {message.pastorName}
-              </p>
-              <p className="text-gray-600">{message.role}</p>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <BlurFade delay={0.2} inView>
+            <div className="flex flex-col items-center mb-16 text-center">
+              <AnimatedGradientText className="mb-4 text-sm font-semibold tracking-wider uppercase">
+                From the Pastor&apos;s Desk
+              </AnimatedGradientText>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
+                Weekly <span className="text-yellow-500">Desk</span>
+              </h2>
             </div>
-          </div>
+          </BlurFade>
+
+          <BlurFade delay={0.4} inView>
+            <div className="relative bg-white rounded-[2.5rem] p-8 md:p-12 lg:p-16 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100 overflow-hidden group">
+              {/* Decorative Quote Mark */}
+              <Quote className="absolute -top-6 -right-6 w-48 h-48 text-gray-50 -rotate-12 transition-transform duration-700 group-hover:rotate-0 group-hover:scale-110" />
+
+              <div className="relative z-10 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+                {/* Image Column */}
+                <div className="w-full lg:w-2/5 flex-shrink-0">
+                  <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
+                    <Image
+                      src={message.image}
+                      alt={message.pastorName}
+                      className="object-cover object-top transition-transform duration-700 hover:scale-105"
+                      fill
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/20 to-transparent opacity-90" />
+                    <div className="absolute bottom-0 left-0 w-full p-8 transform translate-y-2 hover:translate-y-0 transition-transform duration-500">
+                      <p className="text-yellow-400 font-medium text-sm mb-2 uppercase tracking-widest">
+                        {message.role}
+                      </p>
+                      <p className="text-white text-3xl font-bold">
+                        {message.pastorName}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Text Column */}
+                <div className="w-full lg:w-3/5 flex flex-col justify-center">
+                  <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
+                    &ldquo;{message.title}&rdquo;
+                  </h3>
+
+                  <div className="space-y-6 text-gray-600 text-lg md:text-xl font-light leading-relaxed">
+                    {message.paragraphs.map((paragraph, index) => (
+                      <p key={index} className="relative">
+                        {index === 0 && (
+                          <span className="float-left text-7xl text-[#5046e6] font-serif leading-[0.7] mr-4 mt-2">
+                            {paragraph.charAt(0)}
+                          </span>
+                        )}
+                        {index === 0 ? paragraph.slice(1) : paragraph}
+                      </p>
+                    ))}
+                  </div>
+
+                  <div className="mt-12 flex items-center gap-6">
+                    <RainbowButton>
+                      Read Full Message{" "}
+                      <ChevronRight className="w-5 h-5 ml-2" />
+                    </RainbowButton>
+                    <div className="h-px bg-gray-200 flex-grow" />
+                    <span className="text-gray-400 font-medium italic">
+                      2026/10/10
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </BlurFade>
         </div>
       </section>
 
@@ -266,7 +346,7 @@ export default function Home() {
         <p className="text-2xl md:text-3xl font-semibold mb-6">
           Quick <span className="text-yellow-500">Links</span>
         </p>
-        {/* <BentoDemo /> */}
+        <BentoDemo />
       </div>
     </section>
   );
